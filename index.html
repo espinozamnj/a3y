@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es" translate="no">
+<head>
+    <script src="home.js"></script>
+    <script src="../_j.em/app/all-apps.js"></script>
+    <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+    <script src="qwert-y.js"></script>
+    <title>New Tab</title>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+    <meta name="viewport" content="user-scalable=no,width=device-width,initial-scale=1.0">
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="manifest" href="manifest.json">
+    <link rel="stylesheet" href="google.css">
+    <link rel="stylesheet" href="home.css">
+    <link rel="stylesheet" href="qwert-y.css">
+    <meta name="theme-color" content="#4dccdf">
+</head>
+<body>
+    <div class="app u">
+        <div class="root">
+            <div class="header">
+                <a id="apps">
+                    <i class='bx bxs-grid'></i>
+                </a>
+                <a class="clock">
+                    <div id="_h"></div>
+                    <div id="_s">:</div>
+                    <div id="_m"></div>
+                </a>
+                <a class="block">
+                    <i class='bx bxs-lock-alt'></i>
+                </a>
+            </div>
+            <div class="main">
+                <div class="box">
+                    <input style="display:none" type="text" id="val">
+                    <input style="display:none" type="button" value=">" id="send">
+                    <div class="form">
+                        <div class="search">
+                            <input id="goo" autofocus="">
+                            <svg id="lupa" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"></path></svg>
+                        </div>
+                        <div class="suggest"></div>
+                    </div>
+                </div>
+                <a id="aci"></a>
+            </div>
+            <div class="panel">
+                <iframe id="pag"></iframe>
+                <iframe id="app"></iframe>
+            </div>
+            <div id="sjs" class="sjs">
+                <script src="google.js"></script>
+                <a class="unblock">
+                    <i class='bx bxs-lock-open-alt'></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,98 @@
+#goo {
+    font-size: 16px;
+    padding: 9px 36px;
+    border-radius: 20px;
+    border: none;
+    border: 1px solid transparent;
+}
+.open #goo {
+    border-radius: 12px 12px 0px 0px;
+    border-bottom: none;
+}
+#goo:hover,
+#goo:focus {
+    outline: none;
+    background-color: #fff;
+    box-shadow: 0 1px 6px rgba(32, 33, 36, 0.28);
+    border-color: transparent;
+}
+.search svg path {
+    fill: #4b4b4b;
+}
+.search svg:hover path {
+    fill: #272727;
+}
+.form {
+    max-width: 640px;
+    position: relative;
+}
+.search {
+    position: relative;
+}
+.search img {
+    position: absolute;
+    top: 50%;
+    left: 11px;
+    transform: translateY(-50%);
+    height: 14px;
+}
+.search svg {
+    position: absolute;
+    top: 50%;
+    right: 12px;
+    transform: translateY(-50%);
+    height: 22px;
+    cursor: pointer;
+}
+.search #goo {
+    width: 100%;
+}
+.suggest {
+    position: absolute;
+    z-index: 1;
+    background: rgba(232, 232, 232, 1);
+    display: none;
+    visibility: hidden;
+    width: 100%;
+}
+.suggest p {
+    padding: 5px 12px 5px 1.4rem;
+    cursor: pointer;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: pre;
+    width: 100%;
+}
+.suggest p:hover {
+    background-color: rgb(255, 255, 255)
+}
+.suggest p.over {
+    background-color: rgb(255, 255, 255)
+}
+.suggest p img {
+    height: 16px;
+    vertical-align: middle;
+    margin-right: 9px;
+}
+.open .suggest {
+    display: block;
+    visibility: visible;
+    border-color: transparent;
+    border-radius: 0px 0px 12px 12px;
+    padding-top: 6px;
+    padding-bottom: 6px;
+    overflow: hidden;
+    border-top: none;
+    z-index: 2;
+    box-shadow: 0 4px 6px rgba(32, 33, 36, 0.28);
+}
+.open .suggest::before {
+    content: "";
+    position: absolute;
+    top: 2px;
+    left: 5%;
+    right: 5%;
+    height: 1px;
+    background-color: #dfe1e5;
+    width: 90%;
+}
