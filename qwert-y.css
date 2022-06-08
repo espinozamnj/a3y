@@ -242,7 +242,7 @@ a {
     white-space: pre;
 }
 .panel {
-    position: fixed;
+    position: absolute;
     bottom: 0;
     left: 0;
     box-shadow: none;

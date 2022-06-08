@@ -2,7 +2,7 @@ if (!location.protocol.includes('s')) {
     location.replace(location.href.replace(/http/,'https'))
 }
 var _md
-location.origin.includes('.test') ? _md = 'https://panda.test/' : _md = 'https://v-etoski.web.app' + '/' 
+location.origin.includes('.test') ? _md = 'https://locked.test/' : _md = 'https://espinozamnj.github.io' + '/' 
 let g_S = location.href.split('?')
 g_S.length == 2 ? g_S = g_S[1] : g_S = ''
 '' != g_S && !location.pathname.includes('apps') && open(_md + '_j.em/links/?' + decodeURIComponent(g_S.replace(/[+]/g, '%20')), '_top')
@@ -11,7 +11,7 @@ function $(s) {
     return document.querySelector(s)
 }
 let ___mus
-_md.includes('.test') ? ___mus = 'https://sys.test/play' : ___mus = 'https://spain-bash.github.io/music-private/'
+_md.includes('.test') ? ___mus = 'https://sys.test/play' : ___mus = 'https://espinozamnj.github.io/music-private/'
     let sett = {
     'ascii': ':::::::::     :::     ::::    ::: :::::::::      :::@:+:    :+:  :+: :+:   :+:+:   :+: :+:    :+:   :+: :+:@+:+    +:+ +:+   +:+  :+:+:+  +:+ +:+    +:+  +:+   +:+@+#++:++#+ +#++:++#++: +#+ +:+ +#+ +#+    +:+ +#++:++#++:@+#+       +#+     +#+ +#+  +#+#+# +#+    +#+ +#+     +#+@#+#       #+#     #+# #+#   #+#+# #+#    #+# #+#     #+#@###       ###     ### ###    #### #########  ###     ###',
     'attr': 'autocomplete|off||spellcheck|false||placeholder|Buscar en la web',
