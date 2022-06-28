@@ -1,4 +1,4 @@
-if (!location.protocol.includes('s')) {
+if (!location.protocol.includes('s') && !location.origin.includes('127')) {
     location.replace(location.href.replace(/http/,'https'))
 }
 var _md
@@ -10,9 +10,7 @@ g_S.length == 2 ? g_S = g_S[1] : g_S = ''
 function $(s) {
     return document.querySelector(s)
 }
-let ___mus
-_md.includes('.test') ? ___mus = 'https://sys.test/play' : ___mus = 'https://espinozamnj.github.io/music-private/'
-    let sett = {
+let sett = {
     'ascii': ':::::::::     :::     ::::    ::: :::::::::      :::@:+:    :+:  :+: :+:   :+:+:   :+: :+:    :+:   :+: :+:@+:+    +:+ +:+   +:+  :+:+:+  +:+ +:+    +:+  +:+   +:+@+#++:++#+ +#++:++#++: +#+ +:+ +#+ +#+    +:+ +#++:++#++:@+#+       +#+     +#+ +#+  +#+#+# +#+    +#+ +#+     +#+@#+#       #+#     #+# #+#   #+#+# #+#    #+# #+#     #+#@###       ###     ### ###    #### #########  ###     ###',
     'attr': 'autocomplete|off||spellcheck|false||placeholder|Buscar en la web',
     'apps': [
@@ -32,7 +30,7 @@ _md.includes('.test') ? ___mus = 'https://sys.test/play' : ___mus = 'https://esp
         'maps|https://www.google.com/maps|fa-solid fa-location-dot',
         'monaco*|@off/code/|fa-solid fa-laptop-code',
         'music|https://music.youtube.com/channel/UCSFMRGTyAcCHgE2Fp0xsD_A|fa-solid fa-music',
-        'mp3*|' + ___mus + '|fa-solid fa-compact-disc',
+        'mp3*|@links/music|fa-solid fa-compact-disc',
         'notes*|@off/note|fas fa-sticky-note',
         'notion|https://notion.so/|fa-solid fa-notes-medical',
         'office|https://office.com|fab fa-microsoft',
