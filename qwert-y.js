@@ -36,6 +36,7 @@ let sett = {
         'office|https://office.com|fab fa-microsoft',
         'onedrive|https://senatipe-my.sharepoint.com/|fa-solid fa-cloud',
         'outlook|https://outlook.office.com/mail/|fa-solid fa-envelope',
+        'pad*|@off/pad.html|fas fa-sticky-note',
         'play store|https://play.google.com/store?hl=es-419|fa-brands fa-google-play',
         'raindrop|https://app.raindrop.io/|fas fa-paperclip fa-fw',
         'saved|https://saved.io/|fa-solid fa-heart',
