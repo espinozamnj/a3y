@@ -4,6 +4,7 @@ body {
     background-attachment: fixed;
     background-size: cover;
     background-position: center;
+    overflow: hidden;
 }
 a {
     -webkit-highlight: none;
@@ -12,6 +13,7 @@ a {
 .app {
     overflow: hidden;
     backdrop-filter: blur(4px) brightness(1);
+    -webkit-backdrop-filter: blur(4px) brightness(1);
     background: rgba(0, 0, 0, .33);
     display: flex;
     justify-content: center;
