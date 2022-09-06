@@ -1,4 +1,5 @@
 document.title = '[Tab]'
+var sv
 window.addEventListener('load', function () {
     sett.attr.split('||').forEach(function(a){
         let r = a.split('|')
@@ -48,7 +49,7 @@ window.addEventListener('load', function () {
         sh()
     }, 1e4)
     sh()
-    function sv(val) {
+    sv = function(val) {
         let r = decodeURIComponent(val)
         function on(t) {
             t.endsWith('*') ? open(t.slice(0, -1), '', 'noreferrer') : open(t, '_top', 'noreferrer')

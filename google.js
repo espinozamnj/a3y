@@ -20,23 +20,27 @@ window.addEventListener('load', function() {
         if (sg.length > 0) {
             $('.form').classList.add('open')
             $('.suggest').innerHTML = '<p style="display:none">' + data[0] + '</p>'
+            function getNewValueInput(last, newr) {
+                if (last.startsWith('?')) {
+                    last = '?' + newr
+                } else if (last.startsWith('.')) {
+                    last = last.replace(/\s.+/, ' ' + newr)
+                } else {
+                    last = newr
+                }
+                return last
+            }
             let ipnt = $('#goo')
             sg.forEach(function(d){
                 let i = document.createElement('p')
                 i.addEventListener('click', function(){
                     if (!navigator.userAgentData.mobile) {
-                        google(i.innerText)
+                        sv(getNewValueInput(ipnt.value, i.innerText))
+                    } else {
+                        ipnt.value = getNewValueInput(ipnt.value, i.innerText)
                         setTimeout(function(){
                             ipnt.focus()
                         }, 2e2)
-                    } else {
-                        if (ipnt.value.startsWith('?')) {
-                            ipnt.value = '?' + i.innerText
-                        } else if (ipnt.startsWith('.')) {
-                            ipnt.value = ipnt.value.replace(/\s.+/, ' ' + i.innerText)
-                        } else {
-                            ipnt.value = i.innerText
-                        }
                         setTimeout(function(){
                             $('.form').classList.remove('open')
                             $('.form').classList.add('open')
