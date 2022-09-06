@@ -116,7 +116,6 @@ window.addEventListener('load', function() {
                         reduce_bang = v
                     }
                 }
-                console.log(reduce_bang)
                 if ((!(/\.\w{1,4} *$/).test(reduce_bang) || (/\.[^ ]+ .+/).test(reduce_bang)) && reduce_bang != '.') {
                     let url = {
                         client: 'https://www.google.com/complete/search',
