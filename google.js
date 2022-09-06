@@ -107,36 +107,42 @@ window.addEventListener('load', function() {
                 }
             } else {
                 let s = document.createElement('script')
-                let reduce_bang = ''
-                if (reduce_bang.startsWith('.')) {
+                let reduce_bang = v
+                if (v.startsWith('.')) {
                     let split = reduce_bang.match(/\s.+/)
-                    split ? reduce_bang = split.slice(1) : reduce_bang = v
+                    if (!!split) {
+                        reduce_bang = split[0].slice(1)
+                    } else {
+                        reduce_bang = v
+                    }
                 }
-                let url = {
-                    client: 'https://www.google.com/complete/search',
-                    params: {
-                        'client': 'hp',
-                        'hl': 'es-419',
-                        'sugexp': 'msedr',
-                        'gs_rn': '62',
-                        'gs_ri': 'hp',
-                        'cp': '1',
-                        'gs_id': '9c',
-                        'q': encodeURIComponent(reduce_bang),
-                        'xhr': 't',
-                        'callback': 'save_results'
-                    },
-                    prm: []
+                console.log(reduce_bang)
+                if ((!(/\.\w{1,4} *$/).test(reduce_bang) || (/\.[^ ]+ .+/).test(reduce_bang)) && reduce_bang != '.') {
+                    let url = {
+                        client: 'https://www.google.com/complete/search',
+                        params: {
+                            'client': 'hp',
+                            'hl': 'es-419',
+                            'sugexp': 'msedr',
+                            'gs_rn': '62',
+                            'gs_ri': 'hp',
+                            'cp': '1',
+                            'gs_id': '9c',
+                            'q': encodeURIComponent(reduce_bang),
+                            'xhr': 't',
+                            'callback': 'save_results'
+                        },
+                        prm: []
+                    }
+                    for(i in url.params) {
+                        url.prm.push(i + '=' + url.params[i])
+                    }
+                    s.src = url.client + '?' + url.prm.join('&')
+                    $('.sjs').appendChild(s)
+                    setTimeout(function(){
+                        s.parentNode.removeChild(s)
+                    }, 1e3)
                 }
-                for(i in url.params) {
-                    url.prm.push(i + '=' + url.params[i])
-                }
-                s.src = url.client + '?' + url.prm.join('&')
-                $('.sjs').appendChild(s)
-                setTimeout(function(){
-                    s.parentNode.removeChild(s)
-                }, 1e3)
-
             }
         } else {
             $('.form').classList.remove('open')
@@ -147,7 +153,15 @@ window.addEventListener('load', function() {
         let isthis = false
         if (it.value.startsWith('?')) {isthis = true}
         let over = 'over'
-        let copy_val = (t) => { isthis ? it.value = '?' + t : it.value = t }
+        function copy_val (text) {
+            if (it.value.startsWith('?')) {
+                it.value = '?' + text
+            } else if (it.value.startsWith('.')) {
+                it.value = it.value.replace(/ .+/, ' ' + text)
+            } else {
+                it.value = text
+            }
+        }
         let kc = e.which
         if (kc == 38 || kc == 40) {
             e.preventDefault()
