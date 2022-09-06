@@ -20,19 +20,22 @@ window.addEventListener('load', function() {
         if (sg.length > 0) {
             $('.form').classList.add('open')
             $('.suggest').innerHTML = '<p style="display:none">' + data[0] + '</p>'
+            let ipnt = $('#goo')
             sg.forEach(function(d){
                 let i = document.createElement('p')
                 i.addEventListener('click', function(){
                     if (!navigator.userAgentData.mobile) {
                         google(i.innerText)
                         setTimeout(function(){
-                            $('#goo').focus()
-                        }, 2e2);
+                            ipnt.focus()
+                        }, 2e2)
                     } else {
-                        if ($('#goo').value.startsWith('?')) {
-                            $('#goo').value = '?' + i.innerText
+                        if (ipnt.value.startsWith('?')) {
+                            ipnt.value = '?' + i.innerText
+                        } else if (ipnt.startsWith('.')) {
+                            ipnt.value = ipnt.value.replace(/\s.+/, ' ' + i.innerText)
                         } else {
-                            $('#goo').value = i.innerText
+                            ipnt.value = i.innerText
                         }
                         setTimeout(function(){
                             $('.form').classList.remove('open')
@@ -58,7 +61,7 @@ window.addEventListener('load', function() {
             '^--',
             '\\*$',
             '^save',
-            '^\\.',
+            '^@@\\.',
             '^\\.\\.',
             '/[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_\+.~#?&//=]*)?/'
         ]
@@ -104,6 +107,11 @@ window.addEventListener('load', function() {
                 }
             } else {
                 let s = document.createElement('script')
+                let reduce_bang = ''
+                if (reduce_bang.startsWith('.')) {
+                    let split = reduce_bang.match(/\s.+/)
+                    split ? reduce_bang = split.slice(1) : reduce_bang = v
+                }
                 let url = {
                     client: 'https://www.google.com/complete/search',
                     params: {
@@ -114,7 +122,7 @@ window.addEventListener('load', function() {
                         'gs_ri': 'hp',
                         'cp': '1',
                         'gs_id': '9c',
-                        'q': encodeURIComponent(v),
+                        'q': encodeURIComponent(reduce_bang),
                         'xhr': 't',
                         'callback': 'save_results'
                     },

@@ -9,7 +9,7 @@ window.addEventListener('load', function () {
     // console.log(pattern)
     function validURL(str) {
         // pattern = new RegExp('^(https?:\\/\\/)?((([a-z\\d]([a-z\\d-]*[a-z\\d])*)\\.)+[a-z]{2,}|((\\d{1,3}\\.){3}\\d{1,3}))(\\:\\d+)?(\\/[-a-z\\d%@_.~+]*)*(\\?[;&a-z\\d%_.~+=-]*)?(\\#[-a-z\\d_]*)?$', 'i')
-        return !!pattern.test(str)
+        return !!pattern.test(str.toLowerCase())
     }
     $('#pag').src = _md + '_j.em/links?!'
     function resA() {
@@ -151,3 +151,4 @@ window.addEventListener('DOMContentLoaded', function(){
         console.log('return top')
     }, 1e3)
 })
+// https://patorjk.com/software/taag/#p=display&f=Alligator2&t=A3M
