@@ -1,6 +1,6 @@
 document.title = '[Tab]'
 var sv
-window.addEventListener('load', function () {
+window.addEventListener('load', function() {
     sett.attr.split('||').forEach(function(a){
         let r = a.split('|')
         $('#val').setAttribute(r[0], r[1])
@@ -34,21 +34,6 @@ window.addEventListener('load', function () {
     }
     // let i = $('#val')
     let i = $('#goo')
-    String.prototype.ct = function () {
-        let s = this,
-            n = Number(s)
-        n < 10 ? s = '0' + s : s = s
-        return s
-    }
-    function sh() {
-        let t = new Date
-        $('#_h').innerText = t.getHours().toString().ct()
-        $('#_m').innerText = t.getMinutes().toString().ct()
-    }
-    setInterval(function () {
-        sh()
-    }, 1e4)
-    sh()
     sv = function(val) {
         let r = decodeURIComponent(val)
         function on(t) {
@@ -143,6 +128,7 @@ window.addEventListener('load', function () {
         resA()
     })
     g_S.length > 0 && ($('.clock').click())
+    clockA3Y(document.getElementById('.clock'), 1e4)
 })
 window.addEventListener('DOMContentLoaded', function(){
     document.querySelectorAll('.panel > *').forEach(a=>a.style.display='none')
