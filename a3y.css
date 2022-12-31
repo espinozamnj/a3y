@@ -152,11 +152,6 @@ a {
 .b .unblock {
     display: flex;
 }
-#_s {
-    animation-name: dot;
-    animation-duration: 1s;
-    animation-iteration-count: infinite
-}
 .main {
     display: flex;
     flex-direction: column;
@@ -270,20 +265,6 @@ a {
 }
 .pan .panel iframe {
     transform: translateY(0)
-}
-@keyframes dot {
-    0% {
-        opacity: 0
-    }
-    49% {
-        opacity: 0
-    }
-    50% {
-        opacity: 1
-    }
-    100% {
-        opacity: 1
-    }
 }
 #goo {
     background: rgba(255, 255, 255, .5);
