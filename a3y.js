@@ -128,7 +128,7 @@ window.addEventListener('load', function() {
         resA()
     })
     g_S.length > 0 && ($('.clock').click())
-    clockA3Y(document.getElementById('.clock'), 1e4)
+    clockA3Y($('.clock'), 1e4)
 })
 window.addEventListener('DOMContentLoaded', function(){
     document.querySelectorAll('.panel > *').forEach(a=>a.style.display='none')
