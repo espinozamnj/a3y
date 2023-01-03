@@ -58,7 +58,6 @@
 .main,
 .header {
     transition: opacity 0.8s;
-    transform: translateY(-100%);
 }
 .awake-mode .main,
 .awake-mode .header {
