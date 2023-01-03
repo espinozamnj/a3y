@@ -1,6 +1,7 @@
 document.title = '[Tab]'
 var sv
 window.addEventListener('load', function() {
+    let app = $('.app')
     sett.attr.split('||').forEach(function(a){
         let r = a.split('|')
         $('#val').setAttribute(r[0], r[1])
@@ -94,11 +95,11 @@ window.addEventListener('load', function() {
     function embed(id) {
         let s = lastIframe == id ? true : false
         lastIframe = id
-        let a = $('.app'), sta = 'pan'
-        if (a.className.includes(sta) && s) {
-            a.classList.remove(sta)
+        let sta = 'pan'
+        if (app.className.includes(sta) && s) {
+            app.classList.remove(sta)
         } else {
-            a.classList.add(sta)
+            app.classList.add(sta)
         }
         $('.panel').childNodes.forEach(function(f){
             if (f.nodeType !== 3) {
@@ -112,10 +113,12 @@ window.addEventListener('load', function() {
         })
 
     }
-    let awake_cont = $('.over-awake')
+    let awk_p = $('.over-awake'),
+        awk_c = $('.owake')
     $('.block').addEventListener('click', function () {
-        awake_cont.innerHTML = '<div class="over-clock"></div><div class="bg-awake"></div>'
-        let insClock = $('.over-clock')
+        app.classList.remove('pan')
+        awk_c.innerHTML = '<div class="over-clock"><div class="oclck"></div></div><div class="bg-awake"></div>'
+        let insClock = $('.oclck')
         clockA3Y(insClock, 1e4)
         awakeA3Y($('.bg-awake'))
         setTimeout(function() {
@@ -126,16 +129,18 @@ window.addEventListener('load', function() {
                     document.exitFullscreen()
                 }
             })
-            awake_cont.classList.add('ready')
-            $('.app').classList.add('awake-mode')
-        }, 2e2)
+            app.classList.add('awake-mode')
+        }, 1e2)
+        setTimeout(function() {
+            awk_p.classList.add('ready')
+        }, 1e3)
     })
     $('.unblock').addEventListener('click', function () {
-        awake_cont.classList.remove('ready')
-        $('.app').classList.remove('awake-mode')
+        awk_p.classList.remove('ready')
+        app.classList.remove('awake-mode')
         setTimeout(function() {
-            awake_cont.innerHTML = ''
-        }, 4e2)
+            awk_c.innerHTML = ''
+        }, 1e3)
     })
     $('.clock').addEventListener('click', function () {
         embed('pag')

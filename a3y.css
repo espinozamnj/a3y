@@ -1,10 +1,13 @@
 body {
     background-color: white;
+    overflow: hidden;
+}
+body,
+.bg-main {
     background-image: url('wall.jpg');
     background-attachment: fixed;
     background-size: cover;
     background-position: center;
-    overflow: hidden;
 }
 a:not(.unblock) {
     -webkit-tap-highlight-color: #3ae5ff54;
@@ -19,7 +22,7 @@ a:not(.unblock) {
     min-height: -webkit-fill-available;
     max-height: -webkit-fill-available;
 }
-.app:not(.awake-mode) {
+.app {
     backdrop-filter: blur(4px) brightness(1);
     -webkit-backdrop-filter: blur(4px) brightness(1);
     background: rgba(0, 0, 0, .33);
@@ -101,7 +104,6 @@ a:not(.unblock) {
 }
 .clock {
     padding: 0 1rem !important;
-    transition: all 0s;
     position: absolute !important;
     left: 50%;
     transform: translateX(-50%)
