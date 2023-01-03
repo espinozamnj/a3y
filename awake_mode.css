@@ -85,6 +85,7 @@
     opacity: .5;
     position: fixed;
     transform: translateY(-50%);
+    transform: translateX(-50%);
     bottom: -7rem;
     height: 3.5rem;
     width: 3.5rem;
