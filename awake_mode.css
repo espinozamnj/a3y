@@ -10,7 +10,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    z-index: 8;
+    z-index: 10;
     transition-property: transform;
     transition-duration: 0.8s;
     transform: translateY(-100%);
@@ -55,16 +55,14 @@
 .awake-mode .over-awake {
     transform: translateY(0);
 }
+.main,
 .header {
-    transition-property: transform;
-    transition-duration: 0.5s;
-}
-.awake-mode .header {
+    transition: opacity 0.8s;
     transform: translateY(-100%);
 }
-.awake-mode .main {
+.awake-mode .main,
+.awake-mode .header {
     opacity: 0;
-    transition: all 0.8s;
 }
 .over-awake .awake-video {
     position: absolute;
