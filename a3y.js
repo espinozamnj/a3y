@@ -115,9 +115,17 @@ window.addEventListener('load', function() {
     let awake_cont = $('.over-awake')
     $('.block').addEventListener('click', function () {
         awake_cont.innerHTML = '<div class="over-clock"></div><div class="bg-awake"></div>'
-        clockA3Y($('.over-clock'), 1e4)
+        let insClock = $('.over-clock')
+        clockA3Y(insClock, 1e4)
         awakeA3Y($('.bg-awake'))
         setTimeout(function() {
+            insClock.addEventListener('dblclick', function() {
+                if (document.fullscreenElement == null) {
+                    document.documentElement.requestFullscreen()
+                } else {
+                    document.exitFullscreen()
+                }
+            })
             awake_cont.classList.add('ready')
             $('.app').classList.add('awake-mode')
         }, 2e2)
