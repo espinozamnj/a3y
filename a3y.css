@@ -6,9 +6,8 @@ body {
     background-position: center;
     overflow: hidden;
 }
-a {
-    -webkit-highlight: none;
-    -webkit-tap-highlight-color: #3ae5ff7c;
+a:not(.unblock) {
+    -webkit-tap-highlight-color: #3ae5ff54;
 }
 .app {
     overflow: hidden;
