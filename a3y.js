@@ -112,11 +112,22 @@ window.addEventListener('load', function() {
         })
 
     }
+    let awake_cont = $('.over-awake')
     $('.block').addEventListener('click', function () {
-        $('.app').classList.replace('u', 'b')
+        awake_cont.innerHTML = '<div class="over-clock"></div><div class="bg-awake"></div>'
+        clockA3Y($('.over-clock'), 1e4)
+        awakeA3Y($('.bg-awake'))
+        setTimeout(function() {
+            awake_cont.classList.add('ready')
+            $('.app').classList.add('awake-mode')
+        }, 2e2)
     })
     $('.unblock').addEventListener('click', function () {
-        $('.app').classList.replace('b', 'u')
+        awake_cont.classList.remove('ready')
+        $('.app').classList.remove('awake-mode')
+        setTimeout(function() {
+            awake_cont.innerHTML = ''
+        }, 4e2)
     })
     $('.clock').addEventListener('click', function () {
         embed('pag')

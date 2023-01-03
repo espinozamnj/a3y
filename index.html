@@ -5,7 +5,8 @@
     <script src="../_j.em/app/all-apps.js"></script>
     <link href='https://cdnjs.cloudflare.com/ajax/libs/boxicons/2.1.0/css/boxicons.min.css' rel='stylesheet'>
     <script src="init_newtab.js"></script>
-    <script src="clock_create.js"></script>
+    <script src="create_clock.js"></script>
+    <script src="create_awake.js"></script>
     <title>New Tab</title>
     <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
     <meta name="viewport" content="user-scalable=no,width=device-width,initial-scale=1.0">
@@ -14,10 +15,11 @@
     <link rel="stylesheet" href="search_google.css">
     <link rel="stylesheet" href="a3y_main.css">
     <link rel="stylesheet" href="a3y.css">
+    <link rel="stylesheet" href="awake_mode.css">
     <meta name="theme-color" content="#4dccdf">
 </head>
 <body>
-    <div class="app u">
+    <div class="app">
         <div class="root">
             <div class="header">
                 <a id="apps">
@@ -28,6 +30,7 @@
                     <i class='bx bxs-lock-alt'></i>
                 </a>
             </div>
+            <div class="over-awake"></div>
             <div class="main">
                 <div class="box">
                     <input style="display:none" type="text" id="val">
