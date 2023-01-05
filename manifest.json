@@ -4,7 +4,6 @@
     "dir": "ltr",
     "display": "standalone",
     "name": "NewTab",
-    "orientation": "natural",
     "scope": "/",
     "short_name": "[Tab]",
     "start_url": "/a3y",
