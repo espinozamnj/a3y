@@ -270,5 +270,6 @@ a:not(.unblock) {
         width: 100%;
         top: 50px;
         max-width: calc(100vw - (18px * 2));
+        left: 18px;
     }
 }
