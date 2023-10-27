@@ -34,7 +34,7 @@ let sett = {
         'notes*|@off/note|fas fa-sticky-note',
         'notion|https://notion.so/|fa-solid fa-notes-medical',
         'office|https://office.com|fab fa-microsoft',
-        'onedrive|https://senatipe-my.sharepoint.com/|fa-solid fa-cloud',
+        'onedrive|https://estudianteusatedu-my.sharepoint.com/|fa-solid fa-cloud',
         'outlook|https://outlook.office.com/mail/|fa-solid fa-envelope',
         'pad*|@off/pad.html|fas fa-sticky-note',
         'play store|https://play.google.com/store?hl=es-419|fa-brands fa-google-play',
