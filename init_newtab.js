@@ -11,7 +11,7 @@ function $(s) {
     return document.querySelector(s)
 }
 let sett = {
-    'ascii': '    :::      ::::::::  ::::    ::::@  :+: :+:   :+:    :+: +:+:+: :+:+:+@ +:+   +:+         +:+ +:+ +:+:+ +:+@+#++:++#++:     +#++:  +#+  +:+  +#+@+#+     +#+        +#+ +#+       +#+@#+#     #+# #+#    #+# #+#       #+#@###     ###  ########  ###       ###',
+    'ascii': '    :::      ::::::::  :::::   :::::@  :+: :+:   :+:    :+: +:+:+: :+:+:+@ +:+   +:+         +:+ +:+ +:+:+ +:+@+#++:++#++:     +#++:  +#+  +:+  +#+@+#+     +#+        +#+ +#+       +#+@#+#     #+# #+#    #+# #+#       #+#@###     ###  ########  ###       ###',
     'attr': 'autocomplete|off||spellcheck|false||placeholder|Buscar en la web',
     'apps': [
         'bitrix|https://locked.bitrix24.es/|fa-solid fa-briefcase',

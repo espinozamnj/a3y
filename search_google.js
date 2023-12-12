@@ -33,15 +33,16 @@ window.addEventListener('load', function() {
             let ipnt = $('#goo')
             sg.forEach(function(d){
                 let i = document.createElement('p')
-                i.addEventListener('click', function(){
+                i.addEventListener('click', function() {
                     if (!navigator.userAgentData.mobile) {
                         sv(getNewValueInput(ipnt.value, i.innerText))
                     } else {
                         ipnt.value = getNewValueInput(ipnt.value, i.innerText)
-                        setTimeout(function(){
+                        setTimeout(function() {
+                            ipnt.setSelectionRange(ipnt.value.length, ipnt.value.length)
                             ipnt.focus()
-                        }, 2e2)
-                        setTimeout(function(){
+                        }, 1e2)
+                        setTimeout(function() {
                             $('.form').classList.remove('open')
                             $('.form').classList.add('open')
                         }, 505)
@@ -52,7 +53,7 @@ window.addEventListener('load', function() {
             })
         }
     }
-    $('#goo').addEventListener('blur', function(){
+    $('#goo').addEventListener('blur', function() {
         setTimeout(function() {
             $('.form').classList.remove('open')
         }, 5e2)
@@ -76,7 +77,7 @@ window.addEventListener('load', function() {
                 // isCMD && console.log(r)
             }
         })
-        v.startsWith("?") && ( v = v.slice(1) )
+        v.startsWith('?') && ( v = v.slice(1) )
   
         if (v !== '' && !isCMD) {
             if (v.startsWith(':')) {
@@ -95,9 +96,9 @@ window.addEventListener('load', function() {
                             let link = ''
                             r['url'].startsWith('@') ? link = '/_j.em/' + r['url'].slice(1) : link = r['url']
                             let i = document.createElement('p')
-                            i.addEventListener('click', function(){
+                            i.addEventListener('click', function() {
                                 open(link, '_top')
-                                setTimeout(function(){
+                                setTimeout(function() {
                                     $('.form').classList.remove('open')
                                     $('.form').classList.add('open')
                                 }, 505)
@@ -142,7 +143,7 @@ window.addEventListener('load', function() {
                     }
                     s.src = url.client + '?' + url.prm.join('&')
                     $('.sjs').appendChild(s)
-                    setTimeout(function(){
+                    setTimeout(function() {
                         s.parentNode.removeChild(s)
                     }, 1e3)
                 }
@@ -153,8 +154,6 @@ window.addEventListener('load', function() {
     })
     $('#goo').addEventListener('keydown', function(e) {
         let it = e.target
-        let isthis = false
-        if (it.value.startsWith('?')) {isthis = true}
         let over = 'over'
         function copy_val (text) {
             if (it.value.startsWith('?')) {
