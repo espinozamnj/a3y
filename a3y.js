@@ -79,18 +79,19 @@ window.addEventListener('load', function() {
             }, 8e2)
         } else if (ev.ctrlKey && ev.code == 'Space') {
             $('.clock').click()
-        } else if ((ev.code == 'KeyA' || ev.which == 65) && ev.shiftKey) {
+        } else if (ev.code == 'KeyA' && ev.shiftKey) {
             embed('app')
         } else {}
     })
     i.addEventListener('keydown', function (e) {
         let ts = e.target.value
-        if ((e.code == 'Enter' || e.which == 13) && !e.ctrlKey) {
+        if (e.code == 'Enter' && !e.ctrlKey) {
             sv(ts)
-        }
-        if ((e.code == 'Enter' || e.which == 13) && e.ctrlKey) {
+        } else if (e.code == 'Enter' && e.ctrlKey) {
             ts.endsWith('*') ? sv(ts) : sv(ts + '*')
-        }
+        } else if (e.altKey && e.code == 'KeyB') {
+            $('.clock').click()
+        } else {}
     })
     function embed(id) {
         let s = lastIframe == id ? true : false
