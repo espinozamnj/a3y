@@ -51,7 +51,11 @@ window.addEventListener('load', function() {
         } else if (val.startsWith('..')) {
             on(`https://ddg.co/?q=${(r.slice(2))}`)
         } else if (val.startsWith('.')) {
-            on(`https://ddg.co/?q=!${(r.slice(1))}`)
+            if (val == '.') {
+                on('//ddg.gg')
+            } else {
+                on(`https://ddg.co/?q=!${(r.slice(1))}`)
+            }
         } else if (val.startsWith('save:')) {
             on(`${_md}_j.em/off/firenote?autosave=${(encodeURIComponent(r.split('save:')[1]))}`)
         } else if (val.startsWith(':')) {
